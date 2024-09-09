@@ -108,6 +108,7 @@ view sharedData page model toMsg pageView =
                 Html.ul []
                     [ Html.li [] [ Html.text "Menu item 1" ]
                     , Html.li [] [ Html.text "Menu item 2" ]
+                    , Html.li [] [ Html.text "Menu item 3" ]
                     ]
 
               else
