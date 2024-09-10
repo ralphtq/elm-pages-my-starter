@@ -1,7 +1,7 @@
 {
     "type": "application",
     "source-directories": [
-        "src",
+        "src/",
         "app",
         ".elm-pages"
     ],
@@ -31,6 +31,8 @@
             "elm-community/list-extra": "8.7.0",
             "elm-community/result-extra": "2.4.0",
             "elm-explorations/test": "2.2.0",
+            "elmcraft/core-extra": "2.0.0",
+            "hecrj/html-parser": "2.4.0",
             "jluckyiv/elm-utc-date-strings": "1.0.0",
             "justinmimbs/date": "4.1.0",
             "mdgriffith/elm-codegen": "4.2.1",

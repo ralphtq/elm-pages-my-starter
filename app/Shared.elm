@@ -1,4 +1,4 @@
-module Shared exposing (Data, Model, Msg(..), SharedMsg(..), template)
+module Shared exposing (Data, Model, Msg(..), SharedMsg(..), Job, template)
 
 import BackendTask exposing (BackendTask)
 import Effect exposing (Effect)
@@ -41,6 +41,12 @@ type alias Model =
     { showMenu : Bool
     }
 
+type alias Job =
+    { jobName : String
+    , jobAcronym : String
+    , jobIcon : String
+    , jobAttributionIcon : String
+    }
 
 init :
     Pages.Flags.Flags
@@ -93,27 +99,28 @@ view :
     -> { body : List (Html msg), title : String }
 view sharedData page model toMsg pageView =
     { body =
-        [ Html.nav []
-            [ Html.button
-                [ Html.Events.onClick MenuClicked ]
-                [ Html.text
-                    (if model.showMenu then
-                        "Close Menu"
+        [ 
+            -- Html.nav []
+            -- [ Html.button
+            --     [ Html.Events.onClick MenuClicked ]
+            --     [ Html.text
+            --         (if model.showMenu then
+            --             "Close Menu"
 
-                     else
-                        "Open Menu"
-                    )
-                ]
-            , if model.showMenu then
-                Html.ul []
-                    [ Html.li [] [ Html.text "Menu item 1" ]
-                    , Html.li [] [ Html.text "Menu item 2" ]
-                    , Html.li [] [ Html.text "Menu item 3" ]
-                    ]
+            --          else
+            --             "Open Menu"
+            --         )
+            --     ]
+            -- , if model.showMenu then
+            --     Html.ul []
+            --         [ Html.li [] [ Html.text "Menu item 1" ]
+            --         , Html.li [] [ Html.text "Menu item 2" ]
+            --         , Html.li [] [ Html.text "Menu item 3" ]
+            --         ]
 
-              else
-                Html.text ""
-            ]
+            --   else
+            --     Html.text ""
+            Html.text ""
             |> Html.map toMsg
         , Html.main_ [] pageView.body
         ]
